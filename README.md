@@ -1,42 +1,28 @@
 # Kestrel — Revenue Analytics Dashboard
 
-**Live demo:**https://kestrel-analytics-dashboard.vercel.app
+A revenue analytics console for a subscription billing product. Built to demonstrate production-grade React: a real data layer, loading/empty/error states, responsive tables, theme-aware charts, and keyboard-accessible components.
+
+**Live demo:** https://kestrel-analytics-dashboard.vercel.app
 
 ## Preview
 
-### Overview — Light
+### Overview - Light
 ![Overview Light](./docs/overview-light.png)
 
-### Overview — Dark
+### Overview - Dark
 ![Overview Dark](./docs/overview-dark.png)
 
-### Invoice Table — Mobile
+### Invoice Table - Mobile
 ![Invoice Mobile](./docs/invoice-mobile.png)
-
-# Kestrel — Revenue Analytics Dashboard
-
-A revenue analytics console for a subscription billing product. Built to demonstrate
-production-grade React: a real data layer, loading/empty/error states, responsive tables,
-theme-aware charts, and keyboard-accessible components.
-
-**Live demo:** _add your Vercel URL here_
-
-![Kestrel dashboard](docs/screenshot-light.png)
 
 ## What it does
 
-- **Period comparison** — every headline metric is compared against the previous period of
-  equal length, so a 30-day view is measured against the 30 days before it.
-- **Linked filtering** — changing the date range refetches the summary, both charts, the
-  channel breakdown and the invoice table together.
-- **Invoice table** — debounced search across customer, email and invoice ID; status filter;
-  sortable columns; server-style pagination; row detail in a slide-over panel.
-- **Responsive by layout, not by scroll** — the table becomes a card list below `md` rather
-  than scrolling sideways. The sidebar becomes a slide-over below `lg`.
-- **Theme** — light and dark, following the system setting on first visit and remembered
-  after that. Charts read their colors from the active theme.
-- **States** — skeletons on every request, an empty state with a filter reset, and an error
-  state with retry.
+- **Period comparison** -- every headline metric is compared against the previous period of equal length, so a 30-day view is measured against the 30 days before it.
+- **Linked filtering** -- changing the date range refetches the summary, both charts, the channel breakdown and the invoice table together.
+- **Invoice table** -- debounced search across customer, email and invoice ID; status filter; sortable columns; server-style pagination; row detail in a slide-over panel.
+- **Responsive by layout, not by scroll** -- the table becomes a card list below `md` rather than scrolling sideways. The sidebar becomes a slide-over below `lg`.
+- **Theme** -- light and dark, following the system setting on first visit and remembered after that. Charts read their colors from the active theme.
+- **States** -- skeletons on every request, an empty state with a filter reset, and an error state with retry.
 
 ## Stack
 
@@ -58,18 +44,14 @@ src/
 └── pages/           Overview, Invoices, Settings, NotFound
 ```
 
+
 Three decisions worth calling out:
 
-**All data access goes through `services/api.js`.** Components never import the dataset
-directly. Swapping the mock for a real HTTP backend is a change to one file — the artificial
-latency in that layer is what makes the skeleton states meaningful rather than decorative.
+**All data access goes through `services/api.js`.** Components never import the dataset directly. Swapping the mock for a real HTTP backend is a change to one file -- the artificial latency in that layer is what makes the skeleton states meaningful rather than decorative.
 
-**Theme tokens are CSS custom properties.** `--canvas`, `--surface`, `--line`, `--ink` and
-`--muted` are redefined under `.dark` and exposed to Tailwind as `bg-surface`, `text-ink` and
-so on. Components carry no `dark:` variants for color, so dark mode can't drift out of sync.
+**Theme tokens are CSS custom properties.** `--canvas`, `--surface`, `--line`, `--ink` and `--muted` are redefined under `.dark` and exposed to Tailwind as `bg-surface`, `text-ink` and so on. Components carry no `dark:` variants for color, so dark mode can't drift out of sync.
 
-**`useAsync` centralises request state.** Loading, error and stale-response guarding live in
-one hook instead of being reimplemented in each component.
+**`useAsync` centralises request state.** Loading, error and stale-response guarding live in one hook instead of being reimplemented in each component.
 
 ## Running locally
 
@@ -79,7 +61,6 @@ npm run dev      # http://localhost:5173
 npm run build
 npm run preview
 npm run lint
-```
 
 ## Deploying
 
