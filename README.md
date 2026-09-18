@@ -1,5 +1,20 @@
 # Kestrel — Revenue Analytics Dashboard
 
+**Live demo:**https://kestrel-analytics-dashboard.vercel.app
+
+## Preview
+
+### Overview — Light
+![Overview Light](./docs/overview-light.png)
+
+### Overview — Dark
+![Overview Dark](./docs/overview-dark.png)
+
+### Invoice Table — Mobile
+![Invoice Mobile](./docs/invoice-mobile.png)
+
+# Kestrel — Revenue Analytics Dashboard
+
 A revenue analytics console for a subscription billing product. Built to demonstrate
 production-grade React: a real data layer, loading/empty/error states, responsive tables,
 theme-aware charts, and keyboard-accessible components.
