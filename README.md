@@ -1,4 +1,4 @@
-# Kestrel — Revenue Analytics Dashboard
+# Kestrel - Revenue Analytics Dashboard
 
 A revenue analytics console for a subscription billing product. Built to demonstrate production-grade React: a real data layer, loading/empty/error states, responsive tables, theme-aware charts, and keyboard-accessible components.
 
@@ -73,5 +73,5 @@ Netlify: same build settings, plus a `public/_redirects` file containing
 
 ## Notes
 
-The dataset is generated from a fixed seed, so the numbers are identical on every visit —
+The dataset is generated from a fixed seed, so the numbers are identical on every visit -
 useful for screenshots and for demoing without surprises.
